@@ -10,9 +10,11 @@ lim:	dw	4	; program will run four (or however many) times
 start:
 loop:			; jump here
 
-	; sample looped code
+	; sample looped code (prints the decimal and hex values of i)
 ld	i
 dout
+hout
+	; your code here
 
 	; jumper (looping mechanism) begins here
 ldc		'\n'	; or ldc 10 which is ascii for space
@@ -25,7 +27,8 @@ st	i
 ld	lim
 sub	i			; boolean b = (i > loop)
 jzop	loop	; if (!b) then loop
-	; end loop
+	; end jumper, end loop
 
 halt
+
 end	start
