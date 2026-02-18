@@ -1,0 +1,31 @@
+;	fuzyOwl26
+;	loop.mas
+;	a template for an H1 assembly program involving a loop
+
+	; data area
+i:		dw	1	; i
+@1:		dw	1	; ++
+lim:	dw	4	; program will run four (or however many) times
+
+start:
+loop:			; jump here
+
+	; sample looped code
+ld	i
+dout
+
+	; jumper (looping mechanism) begins here
+ldc		'\n'	; or ldc 10 which is ascii for space
+aout
+
+ld	i
+add	@1			; i++
+st	i
+
+ld	lim
+sub	i			; boolean b = (i > loop)
+jzop	loop	; if (!b) then loop
+	; end loop
+
+halt
+end	start
